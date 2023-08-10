@@ -10,7 +10,7 @@ jobs:
       - name: multiline script
         run: |
           node -v
-          npm -v
+          npm -vGITHUB_REPOSITORY
       - name: python Command
         run: |
           import platform
