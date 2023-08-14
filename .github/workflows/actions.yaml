@@ -10,8 +10,8 @@ on:
       - '!feature/featC' # bcxz of ! it will ignore any of the branch for which this pattern matches.
     # tags:
     #   - v1.*
-    # paths:
-    #   - "**.js" # if we push js file, this workflow will run or else it won't run.
+    paths:
+      - "**.js" # if we push js file, this workflow will run or else it won't run.
   # repository_dispatch:
   #   types: [build]
   # schedule:
