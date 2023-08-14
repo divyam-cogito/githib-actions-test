@@ -8,6 +8,7 @@ on:
       # doesn't match feature/feat/a
       - 'feature/**' #it will match anything like features/featA, feature/featB, feature/feat/a
       - '!feature/featC' # bcxz of ! it will ignore any of the branch for which this pattern matches.
+      - 'feature/featD'
     # tags:
     #   - v1.*
     paths:
