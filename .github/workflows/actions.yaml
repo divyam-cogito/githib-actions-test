@@ -1,4 +1,4 @@
-name: Actions Workflow Updated
+name: Actions Workflow
 
 on: 
   repository_dispatch:
