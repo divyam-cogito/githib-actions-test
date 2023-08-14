@@ -1,14 +1,25 @@
 name: Actions Workflow
 
 on: 
-  repository_dispatch:
-    types: [build]
-  schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
   push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+    branches:
+      - master
+      - 'feature/*' # matches features/featA, feature/featB
+      # doesn't match feature/feat/a
+      - 'feature/**' #it will match anything like features/featA, feature/featB, feature/feat/a
+      - '!feature/featC' # bcxz of ! it will ignore any of the branch for which this pattern matches.
+    tags:
+      - v1.*
+    paths:
+      - "**.js" # if we push js file, this workflow will run or else it won't run.
+  # repository_dispatch:
+  #   types: [build]
+  # schedule:
+  #   - cron: "0/5 * * * *"
+  #   - cron: "0/6 * * * *"
+  # push:
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
